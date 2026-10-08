@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Active Medical Care | Dr. Nisa Masood, MD</title>
-  <meta name="description" content="Active Medical Care - Board-certified internal medicine physician Dr. Nisa Masood, MD. Serving Fairfax, VA. Book appointments online." />
+  <meta name="description" content="Active Medical Care - Board-certified internal medicine physician Dr. Nisa Masood, MD. Serving Fairfax, VA. All insurance plans accepted. Care in English, Hindi, Urdu and Telugu." />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.23.2/babel.min.js"></script>
@@ -539,7 +539,7 @@ const PRACTICE = {
   city: "Fairfax, VA 22030",
   mapsUrl: "https://www.google.com/maps/search/?api=1&query=3930+Pender+Dr+Suite+230+Fairfax+VA+22030",
   mapEmbed: "https://www.google.com/maps?q=3930+Pender+Dr+Suite+230,+Fairfax,+VA+22030&output=embed",
-  // Online scheduling link from the practice's EHR/scheduling system. "" = call-to-book only.
+  // Online scheduling: paste Dr. Masood's Patient Fusion profile link (Practice Fusion online booking). "" = call-to-book only.
   bookingUrl: "",
   // Patient portal link from the EHR. "" = hide the Patient Portal button.
   portalUrl: "",
@@ -547,6 +547,8 @@ const PRACTICE = {
   uploadUrl: "",
   // Google review link from the Google Business Profile ("Ask for reviews" > copy link).
   reviewUrl: "",
+  languages: "English, Hindi, Urdu and Telugu",
+  insurance: "We accept all insurance plans. Please call to confirm your coverage before your visit.",
 };
 
 // Real patient testimonials only, with each patient's written permission.
@@ -607,6 +609,7 @@ function App() {
               <div className="hero-tag">🏥 Accepting New Patients</div>
               <h1>Compassionate Care for <em>Every Stage</em> of Life</h1>
               <p className="hero-sub">Led by Dr. Nisa Masood, MD — board-certified in internal medicine with 20+ years of experience, dedicated to providing comprehensive, personalized care for patients of all ages.</p>
+              <p className="hero-sub" style={{ marginTop: -28 }}>🗣️ Care in {PRACTICE.languages} · All insurance plans accepted</p>
               <div className="hero-actions">
                 <button className="btn-primary" onClick={() => setPage("booking")}>Book an Appointment</button>
                 <button className="btn-outline" onClick={() => setPage("team")}>Meet Dr. Masood</button>
@@ -755,11 +758,14 @@ function App() {
                     <p style={{ color: COLORS.teal, fontWeight: 600, fontSize: 15, marginBottom: 28 }}>
                       Board-Certified Internal Medicine Physician · 20+ Years of Experience
                     </p>
+                    <p style={{ color: COLORS.gray700, fontSize: 14, marginTop: -16, marginBottom: 28 }}>
+                      🗣️ Speaks {PRACTICE.languages}
+                    </p>
                     <p style={{ color: COLORS.gray700, fontSize: 15, lineHeight: 1.8, marginBottom: 18 }}>
                       Dr. Nisa Masood is an American Board of Internal Medicine certified physician with over 20 years of clinical experience spanning both the United States and Singapore. Trained at the prestigious Howard University Hospital in Washington D.C. and St. Agnes Healthcare in Baltimore, she brings a rare breadth of expertise — from hospital medicine in major tertiary centers to primary care for patients of all ages, including geriatric and neonatal care.
                     </p>
                     <p style={{ color: COLORS.gray700, fontSize: 15, lineHeight: 1.8, marginBottom: 18 }}>
-                      Her clinical career has spanned high-volume inpatient settings — including Inova Fairfax and Inova Fair Oaks Hospitals in Northern Virginia, and Sengkang General Hospital in Singapore — where she managed 30+ patients daily, supervised Georgetown and George Washington University medical residents, and performed advanced procedures including central line placements, lumbar punctures, and paracentesis. In outpatient settings, she has served practices of 1,500+ patients, consistently earning high marks for patient satisfaction and quality of care.
+                      Her clinical career has spanned high-volume inpatient settings — including Inova Fairfax and Inova Fair Oaks Hospitals in Northern Virginia, and Sengkang General Hospital in Singapore — where she managed 50+ patients daily, supervised Georgetown and George Washington University medical residents, and performed advanced procedures including central line placements, lumbar punctures, and paracentesis. In outpatient settings, she has served practices of 1,500+ patients, consistently earning high marks for patient satisfaction and quality of care.
                     </p>
                     <p style={{ color: COLORS.gray700, fontSize: 15, lineHeight: 1.8, marginBottom: 32 }}>
                       Beyond direct patient care, Dr. Masood has been a leader in healthcare innovation — co-leading Singapore's National Electronic Health Records initiative and pioneering value-based care programs. She founded Active Medical Care to bring this global experience home to Fairfax, delivering compassionate, evidence-based medicine with a personal touch that patients genuinely feel.
@@ -819,6 +825,8 @@ function App() {
                 <a className={`${PRACTICE.bookingUrl ? "btn-secondary" : "btn-primary"} btn-block`} href={PRACTICE.phoneHref}>📞 Call {PRACTICE.phone}</a>
                 <a className="btn-secondary btn-block" href={PRACTICE.phone2Href}>📞 Call {PRACTICE.phone2}</a>
                 <p className="fine">Our front desk will find a time that works for you, check your insurance, and send any new-patient forms. Telehealth visits are available for follow-ups and medication reviews.</p>
+                <p className="fine"><strong>Insurance:</strong> {PRACTICE.insurance}</p>
+                <p className="fine"><strong>Languages:</strong> Dr. Masood speaks {PRACTICE.languages}.</p>
               </div>
 
               <div className="form-step">
@@ -864,6 +872,8 @@ function App() {
                   { icon: "📞", label: "Phone 2", text: PRACTICE.phone2, href: PRACTICE.phone2Href },
                   { icon: "✉️", label: "Email", text: PRACTICE.email, href: `mailto:${PRACTICE.email}` },
                   { icon: "🕘", label: "Hours", text: "Monday – Friday, 9:00 AM – 5:00 PM" },
+                  { icon: "💳", label: "Insurance", text: PRACTICE.insurance },
+                  { icon: "🗣️", label: "Languages", text: PRACTICE.languages },
                 ].map(d => (
                   <div className="contact-detail" key={d.label}>
                     <div className="contact-detail-icon">{d.icon}</div>
