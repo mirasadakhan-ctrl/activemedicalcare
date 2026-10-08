@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://activemedcare.com/</loc>
-    <lastmod>2026-10-08</lastmod>
-  </url>
+  <url><loc>https://activemedcare.com/</loc><lastmod>2026-10-08</lastmod></url>
+  <url><loc>https://activemedcare.com/services/annual-physicals.html</loc><lastmod>2026-10-08</lastmod></url>
+  <url><loc>https://activemedcare.com/services/diabetes-care.html</loc><lastmod>2026-10-08</lastmod></url>
+  <url><loc>https://activemedcare.com/services/high-blood-pressure-care.html</loc><lastmod>2026-10-08</lastmod></url>
+  <url><loc>https://activemedcare.com/services/womens-health.html</loc><lastmod>2026-10-08</lastmod></url>
+  <url><loc>https://activemedcare.com/services/geriatric-care.html</loc><lastmod>2026-10-08</lastmod></url>
+  <url><loc>https://activemedcare.com/services/telehealth-visits.html</loc><lastmod>2026-10-08</lastmod></url>
+  <url><loc>https://activemedcare.com/blog/what-happens-at-an-annual-physical.html</loc><lastmod>2026-10-08</lastmod></url>
+  <url><loc>https://activemedcare.com/blog/medicare-annual-wellness-visit-vs-regular-visit.html</loc><lastmod>2026-10-08</lastmod></url>
+  <url><loc>https://activemedcare.com/blog/high-blood-pressure-when-to-see-a-doctor.html</loc><lastmod>2026-10-08</lastmod></url>
+  <url><loc>https://activemedcare.com/blog/doctor-who-speaks-your-language-fairfax.html</loc><lastmod>2026-10-08</lastmod></url>
+  <url><loc>https://activemedcare.com/services/index.html</loc><lastmod>2026-10-08</lastmod></url>
+  <url><loc>https://activemedcare.com/blog/index.html</loc><lastmod>2026-10-08</lastmod></url>
 </urlset>
