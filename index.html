@@ -65,6 +65,7 @@
       <p>Care in English, Hindi, Urdu and Telugu. All insurance plans accepted. New patients welcome.</p>
       <h2>Services</h2>
       <p>Annual physicals, sick visits, seasonal immunizations, chronic disease management (diabetes, hypertension, COPD, heart disease, thyroid), mental health screening, geriatric care, female wellness, lab and diagnostics, specialist referrals and telehealth visits.</p>
+      <p><a href="/services/index.html">Explore service guides</a> · <a href="/blog/index.html">Read health articles</a></p>
       <h2>Book an appointment</h2>
       <p>Call <a href="tel:+17036206221">(703) 620-6221</a> or <a href="tel:+15715008547">(571) 500-8547</a>. Monday&ndash;Friday, 9:00 AM&ndash;5:00 PM.</p>
       <p>3930 Pender Dr, Suite 230, Fairfax, VA 22030</p>
@@ -547,6 +548,14 @@ const styles = `
   .doctor-body { padding: 48px 52px; }
   .doctor-stats { display: flex; gap: 32px; flex-wrap: wrap; }
 
+  @media (min-width: 961px) and (max-width: 1200px) {
+    .nav { padding: 0 20px; }
+    .nav-links { gap: 2px; }
+    .nav-link { padding: 8px 9px; font-size: 13px; }
+    .nav-btn { padding: 9px 12px; font-size: 13px; }
+    .nav-logo { font-size: 18px; }
+  }
+
   @media (max-width: 960px) {
     .nav { padding: 0 20px; }
     .nav-toggle { display: block; }
@@ -644,6 +653,7 @@ function App() {
               {n.label}
             </button>
           ))}
+          <a className="nav-link" href="/blog/index.html">Health Articles</a>
           {PRACTICE.portalUrl && (
             <a className="nav-link" href={PRACTICE.portalUrl} target="_blank" rel="noopener">Patient Portal</a>
           )}
@@ -695,6 +705,26 @@ function App() {
                   </div>
                 ))}
               </div>
+            </div>
+
+            <div className="section section-alt">
+              <div className="section-title">Health Articles for Fairfax Patients</div>
+              <div className="section-sub">Practical guides to preparing for a visit and understanding your care.</div>
+              <div className="services-grid">
+                {[
+                  { title: "What happens at an annual physical?", href: "/blog/what-happens-at-an-annual-physical.html", desc: "A practical guide to preparing for a preventive visit in Fairfax, VA: questions, records, tests and follow-up. Call Active Medical Care to book." },
+                  { title: "Medicare Annual Wellness Visit or a regular doctor visit?", href: "/blog/medicare-annual-wellness-visit-vs-regular-visit.html", desc: "Understand the difference between Medicare wellness visits, routine physicals and problem visits before scheduling care in Fairfax, VA." },
+                  { title: "High blood pressure: when to see a doctor and what to expect", href: "/blog/high-blood-pressure-when-to-see-a-doctor.html", desc: "Learn how to prepare for a blood pressure follow-up, discuss home readings and recognize situations that need urgent care." },
+                  { title: "Seeing a doctor who speaks your language in Fairfax", href: "/blog/doctor-who-speaks-your-language-fairfax.html", desc: "Care in English, Hindi, Urdu and Telugu at Active Medical Care. Learn how to prepare questions and discuss your care clearly." },
+                ].map(article => (
+                  <div className="service-card" key={article.href}>
+                    <h3><a href={article.href} style={{ color: COLORS.navy, textDecoration: "none" }}>{article.title}</a></h3>
+                    <p>{article.desc}</p>
+                    <a href={article.href} style={{ color: COLORS.teal, display: "inline-block", marginTop: 18, fontWeight: 600 }}>Read Article →</a>
+                  </div>
+                ))}
+              </div>
+              <p style={{ marginTop: 28 }}><a className="btn-secondary" href="/blog/index.html">View All Health Articles →</a> <a className="btn-secondary" href="/services/index.html">Explore Service Guides →</a></p>
             </div>
 
             <div className="divider" />
@@ -753,6 +783,7 @@ function App() {
           <div className="section">
             <div className="section-title">Our Services</div>
             <div className="section-sub">We offer a full spectrum of internal medicine services to meet your healthcare needs at every stage of life.</div>
+            <p style={{ marginBottom: 28 }}><a className="btn-secondary" href="/services/index.html">Explore Our Service Guides →</a></p>
             <div className="services-grid">
               {[
                 { icon: "🩺", title: "Annual Physicals", desc: "Comprehensive head-to-toe examinations with lab work, health screenings, and personalized wellness planning." },
@@ -972,6 +1003,8 @@ function App() {
             <p>© 2026 Active Medical Care. All rights reserved.</p>
           </div>
           <div className="footer-links">
+            <a className="footer-link" href="/services/index.html">Service Guides</a>
+            <a className="footer-link" href="/blog/index.html">Health Articles</a>
             {navItems.map(n => (
               <button key={n.id} className="footer-link" onClick={() => setPage(n.id)}>{n.label}</button>
             ))}
